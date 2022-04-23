@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+    <record id="crm_employees_amounts_form_view" model="ir.ui.view">
+        <field name="name">crm.employees.amounts.form.view</field>
+        <field name="model">crm.employees.amounts</field>
+        <field name="arch" type="xml">
+            <form string="Employees Amounts">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="contract_id"/>
+                        </group>
+                        <group>
+                            <field name="leads_amount"/>
+                            <field name="invoicing_amount"/>
+                        </group>
+                    </group>
+                    <notebook>
+                            <page string="Internal Notes" name="internal_notes">
+                                <field name="notes" placeholder="Add a note"/>
+                            </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="crm_employees_amounts_tree_view" model="ir.ui.view">
+        <field name="name">crm.employees.amounts.tree.view</field>
+        <field name="model">crm.employees.amounts</field>
+        <field name="arch" type="xml">
+            <tree string="Employees Amounts">
+                <field name="contract_id"/>
+                <field name="leads_amount"/>
+                <field name="invoicing_amount"/>
+            </tree>
+        </field>
+    </record>
+    <record id="act_crm_employees_amounts" model="ir.actions.act_window">
+        <field name="name">Employees Amounts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.employees.amounts</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('crm_employees_amounts_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('crm_employees_amounts_form_view')})]"/>
+    </record>
+    <menuitem id="menu_crm_employees_amounts"
+              name="Employees Amounts"
+              parent="crm.crm_menu_root"
+              action="act_crm_employees_amounts"
+              sequence="7"/>
+
+</odoo>

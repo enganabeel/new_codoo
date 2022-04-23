@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+    <data>
+    <record id="salary_calcs_contract_changes" model="ir.ui.view" >
+        <field name="name">salary_calcs.contract_changes</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//field[@name="employee_id"]' position='after'>
+                        <field name="employee_type"/>
+                        <field name="survey_percentage" attrs="{'invisible':[('employee_type','!=','other')]}" readonly='1'/>
+                        <field name="amounts_id" invisible='1'/>
+            </xpath>
+            <xpath expr='//group[@name="salary_and_advantages"]' position='inside'>
+                    <label for="actual_wage" attrs="{'invisible':[('employee_type','!=','sales')]}"/>
+                    <div class="o_row" name="actual_wage" attrs="{'invisible':[('employee_type','!=','sales')]}">
+                         <field name="actual_wage" nolabel="1"/>
+                         <span>/ month</span>
+                    </div>
+                    <label for="changebale_salary"  attrs="{'invisible':[('employee_type','!=','other')]}"/>
+                    <div class="o_row" name="changebale_salary" attrs="{'invisible':[('employee_type','!=','other')]}">
+                         <field name="changebale_salary" nolabel="1"/>
+                         <span>/ month</span>
+                    </div>
+                    <label for="actual_changebale_salary" attrs="{'invisible':[('employee_type','!=','other')]}"/>
+                    <div class="o_row" name="actual_changebale_salary" attrs="{'invisible':[('employee_type','!=','other')]}">
+                         <field name="actual_changebale_salary" nolabel="1"/>
+                         <span>/ month</span>
+                    </div>
+                    <label for="sales_changebale_salary"  attrs="{'invisible':[('employee_type','!=','sales')]}"/>
+                    <div class="o_row" name="sales_changebale_salary" attrs="{'invisible':[('employee_type','!=','sales')]}">
+                         <field name="sales_changebale_salary" nolabel="1"/>
+                         <span>/ month</span>
+                    </div>
+                    <label for="sales_actual_changebale_salary" attrs="{'invisible':[('employee_type','!=','sales')]}"/>
+                    <div class="o_row" name="sales_actual_changebale_salary" attrs="{'invisible':[('employee_type','!=','sales')]}">
+                         <field name="sales_actual_changebale_salary" nolabel="1"/>
+                         <span>/ month</span>
+                    </div>
+                    <label for="total_salary" attrs="{'invisible':[('employee_type','!=','other')]}"/>
+                    <div class="o_row" name="total_salary" attrs="{'invisible':[('employee_type','!=','other')]}">
+                         <field name="total_salary" nolabel="1"/>
+                         <span>/ month</span>
+                    </div>
+            </xpath>
+            <xpath expr='//group[@name="salary_and_advantages"]' position='after'>
+                    <group name="targets_and_amounts" string="Targets and Amounts" attrs="{'invisible':[('employee_type','!=','sales')]}">
+                        <field name="leads_target" />
+                        <field name="leads_amount"/>
+                        <field name="invoicing_target"/>
+                        <field name="invoicing_amount"/>
+                    </group>
+            </xpath>
+            
+        </field>
+    </record>
+
+    </data>
+</odoo>

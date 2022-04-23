@@ -1,0 +1,143 @@
+<odoo>
+    <record id="mobie_shop_form_view" model="ir.ui.view">
+            <field name="name">mobie.form</field>
+            <field name="model">mobile_shop</field>
+            <field name="mode">primary</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form >
+                    <header>
+                        <button name="send_msg" string="Whatsapp Message" type="object" groups="base.group_erp_manager" icon="fa-whatsapp"/>
+                    </header>
+                      <sheet>
+                        <group>
+                          <group>
+                              <field name="name" />
+                              <field name="x_mens" />
+                              <field name="x_women"  />
+                              <field name="x_kids"  />
+                              <field name="x_chairs_number" />
+                              <field name="x_phone"/>
+                              <field name="x_contact_name" />
+                              <field name="x_address"/>
+                              <field name="x_region"/>
+                              <field name="x_district" />
+                              <field name="x_street"/>
+                              <field name="create_uid"/>
+                              <field name="create_date"/>
+                              <field name="x_activity" />
+                              <field name="x_signed" />
+                              <field name="sign_contract_date" attrs="{'invisible': [('x_signed','=',False)] }"/>
+                              <field name="x_paid" />
+                              <field name="sign_date" attrs="{'invisible': [('x_paid','=',False)] }"/>
+                              <field name="x_signing_problem" />
+                              <field name="x_assigned_to" />
+                              <field name="time_from" />
+                              <field name="time_to" />
+                              <field name="day_off" />
+                              <field name="long" />
+                              <field name="lat" />
+                              <field name="house_service" />
+                              <field name="web_site" />
+                              <field name="hallaky_user_name" />
+                              <field name="hallakeen_data" />
+                              <field name="has_branches" />
+                              <field name="has_long" invisible="1"/>
+                              <field name="branches_ids" attrs="{'invisible': [('has_branches','=',False)] }"/>
+
+
+                              <field name="is_a_branch" />
+                              <field name="branch_id" attrs="{'invisible': [('is_a_branch','=',False)] }"/>
+                          </group>
+                        </group>
+                      </sheet>
+                      <div class="oe_chatter">
+                        <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                      </div>
+                </form>
+            </field>
+    </record>
+
+     <record id="hallakeen_data_tree_view" model="ir.ui.view">
+            <field name="name">hallakeen_data.tree</field>
+            <field name="model">hallakeen_data</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree >
+                  <field name="name"/>
+                  <field name="time_from"/>
+                    <field name="time_to"/>
+                    <field name="day_off" />
+                </tree>
+            </field>
+     </record>
+
+    <record id="hallakeen_data_form_view" model="ir.ui.view">
+            <field name="name">hallakeen_data.form</field>
+            <field name="model">hallakeen_data</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form >
+                    <sheet>
+                        <group>
+                          <group>
+                  <field name="name"/>
+                  <field name="time_from"/>
+                    <field name="time_to"/>
+                    <field name="day_off" />
+                    <field name="shop_id" invisible="1" />
+                          </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+     </record>
+
+
+    <record id="mobie_shop_tree_view" model="ir.ui.view">
+            <field name="name">mobie.tree</field>
+            <field name="model">mobile_shop</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="x_phone"/>
+                    <field name="x_contact_name"/>
+                    <field name="x_address"/>
+                    <field name="x_region"/>
+                    <field name="x_district"/>
+                    <field name="x_street"/>
+                    <field name="x_mens"/>
+                    <field name="x_women"/>
+                    <field name="x_kids"/>
+                    <field name="x_chairs_number"/>
+                    <field name="x_assigned_to"/>
+                    <field name="x_activity"/>
+                    <field name="x_signed"/>
+                    <field name="sign_contract_date"/>
+                    <field name="x_paid"/>
+                    <field name="sign_date" />
+                    <field name="x_signing_problem"/>
+                    <field name="time_from" />
+                    <field name="time_to" />
+                    <field name="day_off" />
+                    <field name="long" />
+                    <field name="lat" />
+                    <field name="house_service" />
+                    <field name="web_site" />
+                    <field name="hallaky_user_name" />
+                    <field name="create_date"/>
+                    <field name="create_uid" />
+                    <field name="write_date"/>
+                    <field name="write_uid" />
+                    <field name="has_long" invisible="1" />
+                </tree>
+            </field>
+    </record>
+</odoo>

@@ -1,1 +1,1 @@
-# new_codoo
+# c-odooo

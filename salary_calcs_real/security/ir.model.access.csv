@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sales_calcs_sales_employees_amounts,sales_cals.sales_employees_amounts,model_crm_employees_amounts,sales_team.group_sale_manager,1,1,1,1
+sales_calcs_hr_employee_evaluation,sales_cals.sales_employee_evaluation,model_hr_employee_evaluation,hr.group_hr_user,1,1,1,1
+sales_calcs_hr_employee_evaluation_qs,sales_cals.sales_employee_evaluation_qs,model_hr_employee_evaluation_questions,hr.group_hr_user,1,1,1,1
+sales_calcs_evaluation_qs_types,sales_calcs_evaluation_qs_types,model_evaluation_questions_type,,1,1,1,1
+sales_calcs_evaluation_questions_lines,sales_calcs_evaluation_questions_lines,model_evaluation_questions_lines,,1,1,1,1

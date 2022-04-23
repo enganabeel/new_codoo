@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+    <record id="salary_calcs_crm_teams_changes" model="ir.ui.view" >
+        <field name="name">salary_calcs.crm_teams_changes</field>
+        <field name="model">crm.team</field>
+        <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+        <field name="arch" type="xml">
+            <field name='company_id' position='after'>
+                <field name='leads_target'/>
+            </field>
+        </field>
+    </record>
+
+    </data>
+</odoo>
